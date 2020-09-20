@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件代理</title>
+</head>
+<style>
+    li{
+        display: inline-block;
+        margin: 50px;
+        border: #f1c40f solid 1px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 20px;
+    }
+</style>
+<body>
+<div>
+    <ul id="1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+<div id="2"></div>
+</div>
+<script>
+    let ul =document.getElementById('1');
+    let div2=document.getElementById('2');
+    ul.addEventListener('click',(e)=>{
+      div2.innerText=e.target.innerHTML
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条</title>
+</head>
+<style>
+    div{
+        position: absolute;
+        width: 1px;
+        height: 200px;
+        border: #f1c40f solid 1px;
+        background-color: aliceblue;
+        text-align: center;
+        font-size: 10px;
+    }
+</style>
+<body>
+<div id="1"></div>
+
+</body>
+
+<script>
+   let div1=document.getElementById('1');
+function jindu(div1) {
+    let initlogin=0;
+    a=setInterval(()=>{
+        initlogin=initlogin+10;
+        fat=getComputedStyle(div1);
+        login=parseInt(fat.width);
+        div1.innerHTML=`已经完成${initlogin}%加载`;
+        div1.style.width=login+50+'px';
+if (initlogin>=100){
+    clearInterval(a)
+}
+
+
+    },500)
+}
+
+let b=jindu(div1)
+
+
+
+</script>
+
+
+</html>

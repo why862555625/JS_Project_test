@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+
+<script>
+    let arr = [[0, 1], [2, 3], [4, [5, 6, 7]]]
+
+    function quchong(args) {
+        return args.reduce((pre, item) => {
+              return   pre.concat(Array.isArray(item) ? quchong(item) : item)
+            }, [])
+    }
+    b = quchong(arr)
+    console.log(b)
+</script>
+
+</html>

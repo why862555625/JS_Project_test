@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+</head>
+<body>
+<div>
+<input id="1" type="text"   value="">
+<input id="2" type="text">
+
+<input id="3" type="text">
+<br>
+    <span  id="span"> </span>
+</div>
+</body>
+<script>
+    input=document.getElementsByTagName('input');
+    span=document.getElementById('span');
+    [...input].map((item)=>{
+        item.addEventListener('keyup',(event)=>{
+            [...input].map(
+                (ite)=>{
+                    values=item.value+event.key;
+                    ite.value=values;
+                    span.innerText=values;
+                }
+            )
+        })
+    })
+
+
+
+</script>
+</html>

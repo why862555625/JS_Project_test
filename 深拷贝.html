@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深拷贝</title>
+</head>
+<body>
+
+</body>
+<script>
+    let obj = {
+        name: "111111333",
+        user: {
+            name: "hdcms"
+        },
+        data: []
+    };
+
+    function copy(object) {
+        let obj = object instanceof Array ? [] : {};
+
+        for (const [k, v] of Object.entries(object)) {
+            obj[k] = typeof v == "object" ? copy(v) : v;
+        }
+        return obj;
+    }
+
+    let hd = copy(obj);
+    hd.data.push("向军");
+    console.log(JSON.stringify(hd, null, 2));
+    console.log(JSON.stringify(obj, null, 2));
+
+
+
+</script>
+
+
+</html>
