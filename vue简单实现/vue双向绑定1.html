@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="school.name">
+    <input type="text" v-model="school.age">
+    <input type="text">
+    <p>{{school.name}}</p><br>
+    <p>{{school.age}}</p>
+
+
+</div>
+
+</body>
+<script src="MVVM.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<script>
+    let vm=new Vue({
+        el:'#app',
+        data:{
+            school:{
+                name:'1232134',
+                age:'456'
+            }
+        }
+
+
+    })
+
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div id="app">
+    <p>{{name}}</p>
+    <p q-text="name"></p>
+    <p>{{age}}</p>
+    <p>{{doubleAge}}</p>
+    <input type="text" q-model="name"/>
+    <button @click="changeName">点击</button>
+    <div q-html="html"></div>
+</div>
+<script src="Qvue.js"></script>
+<script>
+    new QVue({
+        el:"#app",
+        data:{
+            name:"I am test",
+            age:12,
+            html:"<button>这是一个后插入的按钮</button>"
+        },
+        created(){
+            console.log("开始吧,QVue");
+            setTimeout(() => {
+                this.name = "测试数据，更改了么";
+            },2000)
+        },
+        methods:{
+            changeName(){
+                this.name = "点击啦，改变吧";
+                this.age = 1000000;
+            }
+        }
+    })
+</script>
+</html>

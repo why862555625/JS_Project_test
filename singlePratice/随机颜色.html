@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机颜色</title>
+</head>
+<body>
+
+<div></div>
+
+
+</body>
+
+<script>
+    function rgb1() {//rgb颜色随机
+        var r = Math.random() * 255;
+        var g = Math.random() * 255;
+        var b = Math.random() * 255;
+        var rgb = r + ',' + g + ',' + b ;
+        return rgb;
+    };
+    function color16(){//十六进制颜色随机
+        var r = Math.floor(Math.random()*256);
+        var g = Math.floor(Math.random()*256);
+        var b = Math.floor(Math.random()*256);
+        var color = '#'+r.toString(16)+g.toString(16)+b.toString(16);
+        return color;
+    }
+
+
+    function rc() {
+        div = document.getElementsByTagName('div');
+        div0 = div[0];
+        setInterval(function () {
+            a=getComputedStyle(div0);
+            r=color16();
+            div0.style.backgroundColor=r
+        },1000)
+    };
+    rc();
+
+
+</script>
+<style>
+    div {
+        width: 500px;
+        height: 1000px;
+        background-color: rgb(115,210,115);
+    }
+</style>
+</html>
