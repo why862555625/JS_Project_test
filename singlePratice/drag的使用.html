@@ -1,0 +1,64 @@
+<meta charset="UTF-8">
+
+<div id="demo2">
+    <h3>从文件夹中拖拽图片到下面的区域进行预览</h3>
+    <ul class="preview"></ul>
+    <style>
+        #demo2 {
+            margin: 20px;
+        }
+        #demo2 .preview {
+            height: 300px;
+            background: #ddd;
+        }
+        #demo2 li {
+            float: left;
+            margin-left: 40px;
+        }
+        #demo2 img {
+            max-height: 150px;
+            width: auto;
+        }
+    </style>
+
+    <script>
+        (function (w) {
+            var doc = w.document;
+
+            var dnd = {
+                init: function () {
+                    var me = this;
+                    var preview = doc.querySelector('#demo2 .preview');
+
+                    preview.addEventListener('dragover', function (e) {
+                        e.preventDefault();
+                    }, false);
+
+                    preview.addEventListener('drop', function (e) {
+                        // 操作系统拖放文件到浏览器需要取消默认行为
+                        e.preventDefault();
+
+                        [].forEach.call(e.dataTransfer.files, function (file) {
+                            if (file && file.type.match('image.*')) {
+                                var reader = new FileReader();
+
+                                reader.onload = function (e) {
+                                    var img = doc.createElement('img');
+                                    img.src = e.target.result;
+                                    var li = doc.createElement('li');
+                                    li.appendChild(img);
+                                    preview.appendChild(li);
+                                };
+
+                                reader.readAsDataURL(file);
+                            }
+                        });
+                    }, false);
+                }
+
+            };
+
+            dnd.init();
+        }(window));
+    </script>
+</div> <!-- demo2 -->

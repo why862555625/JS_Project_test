@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相比于防抖,节流就是在让函数在特定的时间内只执行一次</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 函数节流
+    var canRun = true;
+    document.getElementById("throttle").onscroll = function(){
+        if(!canRun){
+            return
+        }
+        canRun = false
+        setTimeout( function () {
+            console.log("函数节流")
+            canRun = true
+        }, 500)
+    }
+
+</script>
+</html>

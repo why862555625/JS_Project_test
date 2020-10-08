@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>防抖</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: #f1c40f;
+    }
+</style>
+<body>
+<div id="a1"></div>
+</body>
+<script>
+
+
+    function fun() {
+        console.log('onresize')
+    };
+
+    function throttle(method, context) {
+        clearTimeout(method.timer)
+        method.timer = setTimeout(function () {
+            method.call(context);
+        }, 500);
+    }
+
+    window.onresize = () => throttle(fun, window)
+
+
+</script>
+</html>

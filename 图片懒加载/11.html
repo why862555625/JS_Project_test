@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    * {
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .div1 {
+        background-color: #9b59b6;
+        height: 3000px;
+    }
+
+    .div2 {
+        background-color: #f1c40f;
+        height: 300px;
+    }
+</style>
+<body>
+
+<div class="div1">11</div>
+<div class="div2">222</div>
+</body>
+
+<script>
+    div = document.getElementsByTagName('div');
+
+
+
+    var observer = new IntersectionObserver(
+        function (changes) {
+            changes.forEach(function (change) {
+                console.log(change);
+                var container = change.target;
+                var content = container.querySelector('template').content;
+                container.appendChild(content);
+                observer.unobserve(container);
+            });
+        }
+    );
+    observer.observe(div[1]);
+
+
+</script>
+</html>

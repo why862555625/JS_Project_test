@@ -17,3 +17,6 @@ copyobject[key]=deepcopy(object[key])
 }
 // console.log(deepcopy(arry2))
 console.log(deepcopy(arry))
+
+
+
