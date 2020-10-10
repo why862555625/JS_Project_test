@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="i1">
+<span id="s"></span>
+</body>
+
+<script>
+    let a={};
+    input1=document.getElementById('i1');
+    Object.defineProperty(a,'hello',{
+        set(v) {
+            document.getElementById('s').innerText=v;
+            document.getElementById('i1').value=v;
+            a.name=v;
+            console.log(a);
+        }
+    })
+    input1.addEventListener('keydown',function (e) {
+        a.hello=e.target.value;
+    });
+</script>
+</html>

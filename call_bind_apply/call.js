@@ -25,11 +25,8 @@ Function.prototype.myCall = function (obj, ...args) {
     //最重要的一步，1、mycall内部的this是指向调用者fn函数
     //2、obj.fun就是fn函数，obj对象调用了fn函数，因此fn函数内部的this指向obj
     obj.fun = this;
-    console.log(obj);
     obj.fun(...args);
     delete obj.fun;
-    console.log(obj)
-
 }
 fn.myCall(obj1,'a','b');
 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 600px;height:400px;"></div>
+<script src="js/echarts.min.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    option = {
+        title: {
+            text: '天气情况统计',
+            subtext: '虚构数据',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)'
+        },
+        legend: {
+            // orient: 'vertical',
+            // top: 'middle',
+            bottom: 10,
+            left: 'center',
+            data: ['西凉', '益州', '兖州', '荆州', '幽州']
+        },
+        series: [
+            {
+                type: 'pie',
+
+                data: [],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    let a = 221,
+    b = 125,
+    c = 545,
+    d = 412;
+
+
+    setInterval(function () {
+       i=Math.random()*22;
+        a+=i;
+        b+=i;
+        c+=i;
+        d+=i;
+        myChart.setOption(
+            {
+                series: [{
+                    data: [
+                        {value: a, name: '荆州'},
+                        {value: b, name: '兖州'},
+                        {value: c, name: '益州'},
+                        {value: d, name: '西凉'}
+                    ],
+                }]
+            }
+        )
+    }, 1000)
+
+
+</script>
+</body>
+</html>
