@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 230px;
+        background-color: #aaeeea;
+    }
+</style>
+<body>
+<div></div>
+<input type="text">
+</body>
+<script>
+    inner = 'window';
+    function say() {
+        console.log(inner);
+        console.log(this.inner);
+    }
+    var obj1 = (function() {
+        var inner = '1-1';
+        return {
+            inner: '1-2',
+            say: function() {
+                console.log(inner);
+                console.log(this.inner);
+            }
+        }
+    })();
+    console.log(obj1.__proto__)
+    // var obj2 = (function() {
+    //     var inner = '2-1';
+    //     return {
+    //         inner: '2-2',
+    //         say: function() {
+    //             console.log(inner);
+    //             console.log(this.inner);
+    //         }
+    //     }
+    // })();
+
+
+    say();
+    obj1.say();
+    console.log(obj1)
+    // console.log(obj2())
+    // obj2.say();
+    // obj1.say = say;
+    // obj1.say();
+    // obj1.say = obj2.say;
+    // obj1.say();
+
+</script>
+</html>

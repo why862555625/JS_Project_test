@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    a={
+        b:'s',
+        c:function () {
+            console.log(b)//报错
+            console.log(this)
+            console.log(this.b)
+        }
+    }
+    a.c()
+</script>
+</html>
