@@ -1,5 +1,10 @@
-function isp2(n){
-    if(n==0) return true
-    for(var x=1;x<n;x*=2);
-    return x==n
+let name1='a'
+b={
+    name1:'aa',
+    say:()=>{
+        console.log(this.name1)
+        console.log(this)
+    }
 }
+
+b.say()
