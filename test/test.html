@@ -1,58 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <title>css</title>
 </head>
-<style>
-    div {
+<style type="text/css">
+    body{
+        min-width: 550px;
+    }
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .header , .footer{
+        background: gray;
+        width: 100%;
+    }
+    .footer{
+        clear: both;
+    }
+    .main{
+        height: 200px;
+        padding: 0 150px 0 200px;
+        background: greenyellow;
+        *zoom: 1;
+    }
+    .left , .center , .right{
+        float: left;
+    }
+    .center{
+        width: 100%;
+        height: 200px;
+        background: red;
+    }
+    .left {
         width: 200px;
-        height: 230px;
-        background-color: #aaeeea;
+        height: 200px;
+        background: yellow;
+        margin-left: -100%;
+        position: relative;
+        left: -200px;
+    }
+    .right{
+        width: 150px;
+        height: 200px;
+        background: gainsboro;
+        margin-left: -150px;
+        position: relative;
+        left: 150px;![在这里插入图片描述](https://img-blog.csdnimg.cn/20190623214733790.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NtbGxqZXQ=,size_16,color_FFFFFF,t_70)
     }
 </style>
 <body>
-<div></div>
-<input type="text">
+
+
+<div class="main">
+    <div class="center">中间中间中间中间中间中间中间后</div>
+    <div class="left">左边</div>
+    <div class="right">右边</div>
+</div>
+
 </body>
-<script>
-    inner = 'window';
-    function say() {
-        console.log(inner);
-        console.log(this.inner);
-    }
-    var obj1 = (function() {
-        var inner = '1-1';
-        return {
-            inner: '1-2',
-            say: function() {
-                console.log(inner);
-                console.log(this.inner);
-            }
-        }
-    })();
-    console.log(obj1.__proto__)
-    // var obj2 = (function() {
-    //     var inner = '2-1';
-    //     return {
-    //         inner: '2-2',
-    //         say: function() {
-    //             console.log(inner);
-    //             console.log(this.inner);
-    //         }
-    //     }
-    // })();
-
-
-    say();
-    obj1.say();
-    console.log(obj1)
-    // console.log(obj2())
-    // obj2.say();
-    // obj1.say = say;
-    // obj1.say();
-    // obj1.say = obj2.say;
-    // obj1.say();
-
-</script>
 </html>
