@@ -4,7 +4,44 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    img{
+        height: 300px;
+        width: 300px;
+    }
+</style>
 <body>
-
+<div>
+<img src="./src/image/1.jpg" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt=""><img src=""
+                                                                                                              alt=""><img
+        src="" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt=""><img src=""
+                                                                                                                 alt=""><img
+        src="" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt=""><img src=""
+                                                                                                                 alt=""><img
+        src="" alt=""><img src="" alt="">
+</div>
 </body>
+<script>
+    let imgList2 = document.querySelectorAll("img")
+
+    let lozyload2 = (()=>{
+        // 实例化observer
+        let observer = new IntersectionObserver( entries =>{
+            // entries 存储着所有观察元素的intersectionObserverEntry 配置
+            entries.forEach(entry=>{
+                if(entry.intersectionRatio > 0 ){
+                    entry.target.src = './src/image/1.jpg'
+                    //取消观察
+                    observer.unobserve(entry.target)
+                }
+            })
+        })
+
+        imgList2.forEach(img=>{
+            observer.observe(img)
+        })
+    })
+
+    lozyload2()
+</script>
 </html>

@@ -8,14 +8,22 @@
 <input type="text" placeholder="123">
 </body>
 <script>
+  b = 10;
+    // function fn() {
+    //     console.log(this)
+    //     return this.b + 1;
+    // }
     a={
-        b:'s',
-        c:function () {
-            console.log(b)//报错
+        b:12,
+        c:()=>{
             console.log(this)
             console.log(this.b)
         }
     }
+
     a.c()
+
+
+
 </script>
 </html>
