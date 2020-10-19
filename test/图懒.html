@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    img{
+        display: block;
+        height: 200px;
+        width: 300px;
+    }
+</style>
+<body>
+<img src="" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt=""><img src="" alt=""><img src=""
+                                                                                                              alt=""><img
+        src="" alt=""><img src="" alt="">
+</body>
+<script>
+    let  imgList=document.querySelectorAll('img');
+    function loadLay(imgList,imgData) {
+        let observer=new  IntersectionObserver(entries => {
+            entries.forEach(enter=>{
+                if (enter.intersectionRatio>0){
+                    enter.target.src=imgData.shift;
+                    observer.unobserve()
+                }
+            })
+        });
+        imgList.forEach(item=>{
+            observer.observe(item)
+        })
+    }
+    loadLay(imgList,imgData)
+</script>
+</html>

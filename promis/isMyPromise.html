@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="isMyPromise.js"></script>
+<script>
+    let p = new myPromise((resolve, reject) => {
+           resolve("54562313");
+    }).then(value=>{
+
+        console.log(value)
+        return '123'
+    }).then(value=>{
+        console.log(value)
+    },reason=>{
+        console.log(reason)
+    });
+    console.log('test')
+
+</script>
+</html>

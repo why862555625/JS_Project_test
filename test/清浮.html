@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .fa{
+        width: 800px;
+        border: solid red 1px;
+        margin: 200px;
+    }
+
+    .a1{
+
+        position: relative;
+        width: 200vw;
+        min-height: 200px;
+        margin-left: -200px;
+        float: left;
+
+        background-color: #9b59b6;
+    }
+    .a2{
+        margin-left: 100%;
+        position: relative;
+        width: 200px;
+        min-height: 200px;
+        float: left;
+        background-color: black;
+    }
+.fa:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+</style>
+<body>
+<div class="fa">
+    <div class="a1"></div>
+    <div class="a2"></divc>
+</div>
+</body>
+</html>

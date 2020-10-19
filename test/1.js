@@ -1,1 +1,6 @@
-console.log(1+undefined)
+class myPromise {
+        constructor(res,rej) {
+            this.status='pending';
+
+        }
+}

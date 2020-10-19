@@ -5,23 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-<input type="text" placeholder="123">
+<input type="text" >
 </body>
-<script>
-  b = 10;
-    // function fn() {
-    //     console.log(this)
-    //     return this.b + 1;
-    // }
-    a={
-        b:12,
-        c:()=>{
-            console.log(this)
-            console.log(this.b)
-        }
-    }
 
-    a.c()
+<script>
+let a={
+    value:'123'
+    }
+let input=document.getElementsByTagName('input')
+
+    Object.defineProperty(a,value,{
+        set(v) {
+
+        },
+        get() {
+          input[0].innerText=value
+        }
+    })
+
 
 
 

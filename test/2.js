@@ -1,11 +1,17 @@
-function isn(array1) {
-    a = {
-        i: 0,
-        j: 0,
-        max: array1[0]
-    }
-
-}
-
-
-console.log(isn([2, 6, 4, 8, 10, 9, 15]))
+const hdcms = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("第一个Promise");
+    }, 1000);
+});
+const houdunren = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("第二个异步");
+    }, 1000);
+});
+const hd = Promise.all([hdcms, houdunren])
+    .then(results => {
+        console.log(results);
+    })
+    .catch(msg => {
+        console.log(msg);
+    });

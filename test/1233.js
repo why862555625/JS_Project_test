@@ -1,15 +1,28 @@
-let  a = { 3:'cd',
-        1:'as',
+class myPromise {
+    static  PENDING='pending'
+    static  FULFILLED='fulfiilled'
+    static  REJECT='reject'
+    constructor(executor) {
+        this.status=myPromise.PENDING
+        this.value=null
+        executor(this.resolve.call(this),this.reject.call(this));
+        }
+        resolve(){
+        if (this.status==myPromise.PENDING){
+            try {
+                this.status=myPromise.FUFILLED
+            }catch (e) {
+                this.status=this.reject(e)
+            }
+        }
+        }
+        reject(){
+        try {
+            this.status==myPromise.REJECTED
+        }catch (e) {
 
-    2:'b'
+        }
+
+
+        }
 }
-
-console.log(Reflect.ownKeys(a))
-console.log(Object.getOwnPropertyNames(a))
-
-b=Object.entries(a)
-c=b.sort(function (a,b) {
-return a[1]-b[1]
-
-})
-console.log(c)

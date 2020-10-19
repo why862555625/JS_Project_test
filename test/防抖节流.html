@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: #9b59b6;
+    }
+</style>
+<div></div>
+</body>
+<script>
+   let div1=document.getElementsByTagName('div')
+    function jieliu(fn,layout) {
+        div1[0].addEventListener('click',()=>{
+            clearTimeout( fn.timer)
+            fn.timer=setTimeout( () =>{
+                    fn()
+            },layout)
+
+          })
+    }
+    function fn(div1) {
+      console.log('1223')
+    }
+    jieliu(fn,1000)
+
+</script>
+</html>
